@@ -616,7 +616,7 @@ class Templates {
             $links = sprintf( __( 'You can %1$s, %2$s, or %3$s.', 'restricted-page-templates' ), '{home_link}', '{login_link}', '{retry_link}' );
         }
 
-        return '<h2>' . __( 'Access Denied', 'restricted-page-templates' ) . '</h2>' . "\n\n" . '<p>' . $message . '</p>' . "\n\n" . '<p>' . $links . '</p>';
+        return '<p>' . $message . '</p>' . "\n\n" . '<p>' . $links . '</p>';
     } // End default_content()
 
 
