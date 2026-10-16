@@ -1,0 +1,541 @@
+/**
+ * RESTRICTED PAGE TEMPLATES: Admin theme
+ *
+ * Shared header, subheader, boxes and fields for the Settings and Templates tabs.
+ * Colors follow Admin Help Docs' variables when it is active, with matching fallbacks.
+ */
+
+:root {
+    --rptemplates-color-header-bg: var( --helpdocs-color-header-bg, #1D2327 );
+    --rptemplates-color-header-font: var( --helpdocs-color-header-font, #FFFFFF );
+    --rptemplates-color-header-tab: var( --helpdocs-color-header-tab, #475467 );
+    --rptemplates-color-header-tab-link: var( --helpdocs-color-header-tab-link, #98A2B3 );
+    --rptemplates-color-accent: var( --helpdocs-color-doc-accent, #0783BE );
+    --rptemplates-color-button: var( --helpdocs-color-button, #0783BE );
+    --rptemplates-color-button-font: var( --helpdocs-color-button-font, #FFFFFF );
+    --rptemplates-color-button-hover: var( --helpdocs-color-button-hover, #066998 );
+    --rptemplates-radius: 8px;
+}
+
+/* Header */
+
+#rptemplates-header {
+    margin: 0 0 0 -20px !important;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    background: var( --rptemplates-color-header-bg );
+    padding: 20px 30px;
+}
+
+#rptemplates-header .logo {
+    height: 32px !important;
+    width: auto !important;
+}
+
+#rptemplates-header .logo.is-inverted {
+    filter: invert( 100% );
+}
+
+#rptemplates-header h1 {
+    color: var( --rptemplates-color-header-font ) !important;
+    letter-spacing: 0 !important;
+    line-height: 1.2 !important;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 3px 0;
+    padding: 0;
+}
+
+#rptemplates-header .tabs-wrapper {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+#rptemplates-header a.rptemplates-tab {
+    background: transparent;
+    color: var( --rptemplates-color-header-tab-link );
+    border: none !important;
+    border-radius: 6px;
+    text-decoration: none;
+    padding: 10px 15px !important;
+    font-size: 12px !important;
+    line-height: 1 !important;
+}
+
+#rptemplates-header a.rptemplates-tab-active,
+#rptemplates-header a.rptemplates-tab:hover {
+    background: var( --rptemplates-color-header-tab ) !important;
+    color: var( --rptemplates-color-header-font ) !important;
+}
+
+#rptemplates-header a.rptemplates-tab-active {
+    font-weight: 500;
+}
+
+/* Subheader */
+
+#rptemplates-subheader {
+    margin: 0 0 20px -20px !important;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    background: #fff !important;
+    color: #333 !important;
+    padding: 20px 30px;
+    box-shadow: 0 1px 2px rgba( 16, 24, 40, .1 );
+    min-height: 40px;
+}
+
+#rptemplates-subheader .subheader-left {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+#rptemplates-subheader .subheader-right {
+    margin-left: auto;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+#rptemplates-subheader h2.tab-title {
+    font-size: 21px;
+    font-weight: 400;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#rptemplates-subheader .rptemplates-button {
+    display: inline-flex;
+    height: 30px !important;
+    min-height: 30px !important;
+    padding: 0 12px !important;
+}
+
+#rptemplates-subheader a.rptemplates-external-link {
+    gap: 6px;
+}
+
+#rptemplates-subheader .rptemplates-button .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+#rptemplates-version {
+    font-size: 12px;
+    color: #667085;
+    margin-right: 10px;
+}
+
+#rptemplates-save-reminder {
+    display: none;
+    background: linear-gradient( 90deg, #dc3545 0%, #b02a37 100% );
+    color: #fff;
+    padding: 5px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: 0 4px 14px rgba( 220, 53, 69, .25 );
+    animation: rptemplatesPulse 2s ease-in-out infinite;
+}
+
+@keyframes rptemplatesPulse {
+    0%   { box-shadow: 0 4px 14px rgba( 220, 53, 69, .25 ); }
+    50%  { box-shadow: 0 6px 24px rgba( 220, 53, 69, .6 ); }
+    100% { box-shadow: 0 4px 14px rgba( 220, 53, 69, .25 ); }
+}
+
+#rptemplates-save-note {
+    font-weight: 600;
+}
+
+#rptemplates-save-note.is-success {
+    color: #00a32a;
+}
+
+#rptemplates-save-note.is-error {
+    color: #d63638;
+}
+
+/* Templates list: our header replaces the default title and Add New button */
+
+.post-type-rptemplates_tpl .wrap > h1.wp-heading-inline,
+.post-type-rptemplates_tpl .wrap > .page-title-action {
+    display: none;
+}
+
+.post-type-rptemplates_tpl .wrap {
+    margin-top: 0;
+}
+
+/* Content wrap */
+
+.rptemplates-wrap.wrap {
+    margin: 0;
+    padding: 0 30px 30px 10px;
+}
+
+.rptemplates-content-wrap {
+    margin-top: 40px !important;
+}
+
+/* Boxes */
+
+.rptemplates-settings-grid {
+    display: grid;
+    grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
+    gap: 24px;
+    align-items: start;
+}
+
+@media ( max-width: 900px ) {
+    .rptemplates-settings-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.rptemplates-box {
+    background: #fff;
+    border-radius: var( --rptemplates-radius );
+    box-shadow: 0 1px 2px rgba( 16, 24, 40, .1 );
+}
+
+.rptemplates-box-header {
+    border-bottom: 1px solid #eaecf0;
+    padding: 20px;
+}
+
+.rptemplates-box-header h2 {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1d2939;
+}
+
+.rptemplates-box-body {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 20px;
+}
+
+/* Fields */
+
+.rptemplates-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.rptemplates-field > label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #344054;
+}
+
+.rptemplates-field input[type="text"],
+.rptemplates-field input[type="url"],
+.rptemplates-field select,
+.rptemplates-table select {
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid #d0d5dd;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 13px;
+    background: #fff;
+    box-shadow: none;
+    box-sizing: border-box;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.rptemplates-field select,
+.rptemplates-table select {
+    height: 36px;
+    line-height: 1;
+}
+
+.rptemplates-field input:focus,
+.rptemplates-field select:focus,
+.rptemplates-table select:focus {
+    border-color: #84caff;
+    box-shadow: 0 0 0 3px rgba( 132, 202, 255, .25 );
+    outline: none;
+}
+
+.rptemplates-section-desc {
+    margin: 0;
+    font-size: 13px;
+    color: #667085;
+}
+
+.rptemplates-inline-label {
+    display: flex !important;
+    align-items: center;
+    gap: 6px;
+    font-weight: 400 !important;
+}
+
+.rptemplates-inline-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.rptemplates-inline-actions select {
+    flex: 1 1 200px;
+    width: auto;
+}
+
+.rptemplates-checkboxes {
+    display: grid;
+    grid-template-columns: repeat( 3, minmax( 0, 1fr ) );
+    gap: 8px 16px;
+}
+
+.rptemplates-checkboxes label {
+    display: flex !important;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+}
+
+@media ( max-width: 900px ) {
+    .rptemplates-checkboxes {
+        grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
+    }
+}
+
+#rptemplates-upload-filename {
+    display: none;
+    font-family: Consolas, Monaco, monospace;
+    font-weight: 600;
+    padding: 4px 8px;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Post types table */
+
+.rptemplates-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.rptemplates-table th {
+    text-align: left;
+    font-weight: 500;
+    color: #667085;
+    padding: 0 8px 8px;
+    border-bottom: 1px solid #eaecf0;
+}
+
+.rptemplates-table td {
+    padding: 8px;
+    border-bottom: 1px solid #f2f4f7;
+    vertical-align: middle;
+}
+
+.rptemplates-table th:first-child,
+.rptemplates-table td:first-child {
+    width: 60px;
+    text-align: center;
+}
+
+.rptemplates-table td code {
+    font-size: 11px;
+    margin-left: 4px;
+}
+
+/* Buttons */
+
+.rptemplates-button {
+    background: var( --rptemplates-color-button ) !important;
+    color: var( --rptemplates-color-button-font ) !important;
+    line-height: 1 !important;
+    padding: 8px 12px !important;
+    border: 1px solid transparent !important;
+    border-radius: 6px !important;
+    text-decoration: none;
+    font-size: .8rem !important;
+    font-weight: 500 !important;
+    transition: background .3s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+}
+
+.rptemplates-button:hover,
+.rptemplates-button:focus {
+    background: var( --rptemplates-color-button-hover ) !important;
+}
+
+.rptemplates-button:disabled {
+    background: #d5d5d5 !important;
+    color: #999 !important;
+    cursor: not-allowed !important;
+    opacity: .7;
+}
+
+.rptemplates-button.rptemplates-button-saving .dashicons {
+    margin: 0 5px 0 -2px;
+}
+
+.rptemplates-button.rptemplates-button-secondary {
+    background: #f6f7f7 !important;
+    color: #1d2327 !important;
+    border-color: #d0d5dd !important;
+}
+
+.rptemplates-button.rptemplates-button-secondary:hover {
+    background: #e1e4e6 !important;
+}
+
+.rptemplates-button.rptemplates-button-danger {
+    background: #fff !important;
+    color: #d63638 !important;
+    border: 1px solid #d63638 !important;
+}
+
+.rptemplates-button.rptemplates-button-danger:hover {
+    background: #d63638 !important;
+    color: #fff !important;
+}
+
+/* Notes */
+
+.rptemplates-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: #f0f6fc;
+    border-left: 4px solid var( --rptemplates-color-accent );
+    border-radius: 0 6px 6px 0;
+    padding: 12px 16px;
+    margin: 0 0 20px;
+    box-shadow: 0 1px 2px rgba( 16, 24, 40, .06 );
+}
+
+.rptemplates-note p {
+    margin: 0;
+    font-size: 13px;
+    color: #344054;
+}
+
+.rptemplates-note .dashicons {
+    color: var( --rptemplates-color-accent );
+}
+
+.rptemplates-note-warning {
+    background: #fef9e7;
+    border-left-color: #dba617;
+}
+
+.rptemplates-note-warning .dashicons {
+    color: #dba617;
+}
+
+/* Tooltips */
+
+.rptemplates-tooltip {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    margin-left: 4px;
+    color: #98a2b3;
+    cursor: help;
+}
+
+.rptemplates-tooltip:hover,
+.rptemplates-tooltip:focus {
+    color: var( --rptemplates-color-accent );
+    outline: none;
+}
+
+.rptemplates-tooltip .dashicons {
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+}
+
+.rptemplates-tooltip-text {
+    position: absolute;
+    bottom: calc( 100% + 8px );
+    left: 50%;
+    z-index: 100;
+    width: max-content;
+    max-width: 260px;
+    padding: 8px 10px;
+    background: #1d2327;
+    color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 6px 16px rgba( 16, 24, 40, .25 );
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.45;
+    text-align: left;
+    white-space: normal;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate( -50%, 4px );
+    transition: opacity .15s ease, transform .15s ease, visibility .15s;
+    pointer-events: none;
+}
+
+.rptemplates-tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border: 5px solid transparent;
+    border-top-color: #1d2327;
+}
+
+.rptemplates-tooltip:hover .rptemplates-tooltip-text,
+.rptemplates-tooltip:focus .rptemplates-tooltip-text {
+    opacity: 1;
+    visibility: visible;
+    transform: translate( -50%, 0 );
+}
+
+/* Spinner */
+
+.rptemplates-spin {
+    animation: rptemplatesSpin 1s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@keyframes rptemplatesSpin {
+    0% { transform: rotate( 0deg ); }
+    100% { transform: rotate( 360deg ); }
+}
+
+/* Notices */
+
+.rptemplates-admin-screen #wpbody-content > .notice,
+.rptemplates-admin-screen #wpbody-content > .rptemplates-restore-note {
+    margin: 0 30px 0 10px;
+}
+
+.rptemplates-admin-screen .wrap > .notice {
+    margin: 0 0 20px;
+}
+
+#rptemplates-create-page[hidden] {
+    display: none;
+}

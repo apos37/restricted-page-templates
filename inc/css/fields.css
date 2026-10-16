@@ -1,0 +1,312 @@
+/**
+ * RESTRICTED PAGE TEMPLATES: Editor fields
+ *
+ * Access controls in the post meta box, Quick/Bulk Edit and menu items, the search pickers,
+ * and the template settings and merge tags boxes.
+ */
+
+.rptemplates-access-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.rptemplates-access-label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.rptemplates-access-fields,
+.rptemplates-access-label {
+    min-width: 0;
+}
+
+.rptemplates-access-label select,
+.rptemplates-picker-search {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.rptemplates-restrict-to {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.rptemplates-param-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.rptemplates-param-fields label {
+    display: flex;
+    flex-direction: column;
+}
+
+.rptemplates-param-fields .rptemplates-sub-label {
+    margin-top: 2px;
+}
+
+.rptemplates-param-fields input[type="text"],
+.rptemplates-param-fields select {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.rptemplates-restrict-to[hidden],
+.rptemplates-param-fields[hidden],
+.rptemplates-scope-panel[hidden] {
+    display: none;
+}
+
+.rptemplates-sub-label {
+    display: block;
+    font-weight: 600;
+    margin: 6px 0 2px;
+}
+
+.rptemplates-role-checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+}
+
+.rptemplates-role-checkboxes label,
+.rptemplates-check-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.rptemplates-check-row {
+    display: flex;
+    margin: 2px 0;
+}
+
+.rptemplates-hint {
+    margin: 4px 0 0;
+    color: #646970;
+    font-size: 12px;
+    font-style: italic;
+}
+
+/* Picker */
+
+.rptemplates-picker {
+    position: relative;
+}
+
+.rptemplates-picker-selected {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin: 0 0 6px;
+    padding: 0;
+    list-style: none;
+}
+
+.rptemplates-picker-selected:empty {
+    display: none;
+}
+
+.rptemplates-picker-selected li {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0;
+    padding: 2px 4px 2px 8px;
+    background: #f0f6fc;
+    border: 1px solid #c5d9ed;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+.rptemplates-picker-remove {
+    border: 0;
+    background: none;
+    cursor: pointer;
+    color: #646970;
+    font-size: 14px;
+    line-height: 1;
+    padding: 0 2px;
+}
+
+.rptemplates-picker-remove:hover,
+.rptemplates-picker-remove:focus {
+    color: #d63638;
+}
+
+.rptemplates-picker-results {
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    right: 0;
+    max-height: 220px;
+    overflow-y: auto;
+    margin: 2px 0 0;
+    padding: 0;
+    list-style: none;
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba( 0, 0, 0, .12 );
+}
+
+.rptemplates-picker-results li {
+    margin: 0;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.rptemplates-picker-results li.is-active,
+.rptemplates-picker-results li:hover {
+    background: #f0f6fc;
+}
+
+.rptemplates-picker-results li.is-empty {
+    cursor: default;
+    color: #646970;
+    font-style: italic;
+}
+
+/* Meta box */
+
+.rptemplates-templates-in-use {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid #f0f0f1;
+}
+
+.rptemplates-templates-in-use ul {
+    margin: 0 0 8px;
+}
+
+.rptemplates-templates-in-use li {
+    margin: 0 0 4px;
+}
+
+/* List table */
+
+.fixed .column-rptemplates {
+    width: 14%;
+}
+
+.rptemplates-show-templates .fixed .column-rptemplates {
+    width: 24%;
+}
+
+.rptemplates-inline-edit .rptemplates-access-fields {
+    margin-top: 6px;
+    padding: 8px;
+    border: 1px solid #dcdcde;
+    border-radius: 4px;
+    background: #f6f7f7;
+}
+
+.rptemplates-inline-edit .rptemplates-role-checkboxes input,
+.rptemplates-inline-edit .rptemplates-check-row input {
+    width: auto;
+}
+
+.rptemplates-inline-edit .rptemplates-param-fields {
+    max-width: 320px;
+}
+
+/* Menus */
+
+.rptemplates-menu-fields {
+    margin: 6px 0 10px;
+}
+
+/* Template editor */
+
+.rptemplates-template-settings select {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+}
+
+.rptemplates-scope-panel {
+    margin: 4px 0 6px;
+}
+
+.rptemplates-follow-choice[hidden],
+.rptemplates-conditions[hidden],
+.rptemplates-templates-in-use li[hidden],
+.rptemplates-templates-in-use[hidden],
+.rptemplates-unique-link[hidden],
+.rptemplates-hint[hidden] {
+    display: none;
+}
+
+.rptemplates-follow-choice {
+    margin-bottom: 4px;
+}
+
+.rptemplates-badge {
+    display: inline-block;
+    margin-left: 4px;
+    padding: 0 6px;
+    border-radius: 9px;
+    background: #dcf2e0;
+    color: #1e6b2d;
+    font-size: 11px;
+    line-height: 18px;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+.rptemplates-templates-list {
+    margin: 4px 0 0;
+    font-size: 12px;
+}
+
+.rptemplates-templates-list li {
+    margin: 0 0 2px;
+}
+
+.rptemplates-template-condition {
+    color: #646970;
+}
+
+.rptemplates-merge-tags {
+    margin: 8px 0 0;
+}
+
+.rptemplates-merge-tags li {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 8px;
+}
+
+.rptemplates-merge-tags span {
+    color: #646970;
+    font-size: 12px;
+}
+
+.rptemplates-merge-tag {
+    align-self: flex-start;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.rptemplates-merge-tag:hover code,
+.rptemplates-merge-tag:focus code {
+    background: #dcecf8;
+}
+
+.rptemplates-merge-tag.is-copied code {
+    background: #d1f2d9;
+}
+
+.rptemplates-merge-tag-select {
+    margin-left: 4px;
+    vertical-align: middle;
+}

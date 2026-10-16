@@ -1,0 +1,261 @@
+/**
+ * RESTRICTED PAGE TEMPLATES: Templates list
+ *
+ * Loaded on the Templates tab only. Matches the Admin Help Docs list screens.
+ */
+
+/* Page */
+
+.post-type-rptemplates_tpl #wpbody-content .wrap {
+    margin: 0;
+    padding: 30px 30px 30px 10px;
+}
+
+/* Search in the subheader */
+
+.rptemplates-search {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 0;
+}
+
+#rptemplates-subheader .rptemplates-search-input {
+    height: 30px;
+    min-height: 30px;
+    margin: 0;
+    border: 1px solid #d0d5dd;
+    border-radius: 6px;
+    box-shadow: none;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+#rptemplates-subheader .rptemplates-search-input:focus,
+.post-type-rptemplates_tpl .tablenav .actions select:focus,
+.post-type-rptemplates_tpl .tablenav-pages .current-page:focus {
+    border-color: #84caff;
+    box-shadow: 0 0 0 3px rgba( 132, 202, 255, .25 );
+    outline: none;
+}
+
+#rptemplates-subheader input[type="submit"].rptemplates-button {
+    border: none;
+}
+
+/* The default search box is replaced by the one in the subheader */
+
+.post-type-rptemplates_tpl #posts-filter .search-box {
+    display: none;
+}
+
+/* Status links as pills */
+
+.post-type-rptemplates_tpl .subsubsub {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    float: none;
+    margin: 0 0 16px;
+    padding: 0;
+}
+
+.post-type-rptemplates_tpl .subsubsub li {
+    margin: 0;
+    font-size: 0;
+}
+
+.post-type-rptemplates_tpl .subsubsub a {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: rgba( 0, 0, 0, .08 );
+    color: #344054;
+    font-size: 13px;
+    line-height: 1.4;
+    text-decoration: none;
+    transition: background .15s ease;
+}
+
+.post-type-rptemplates_tpl .subsubsub a:hover,
+.post-type-rptemplates_tpl .subsubsub a:focus {
+    background: rgba( 0, 0, 0, .14 );
+}
+
+.post-type-rptemplates_tpl .subsubsub a.current,
+.post-type-rptemplates_tpl .subsubsub a.current:hover {
+    background: var( --rptemplates-color-accent );
+    color: #fff;
+    font-weight: 500;
+}
+
+.post-type-rptemplates_tpl .subsubsub a.current .count {
+    color: inherit;
+}
+
+/* Container */
+
+.post-type-rptemplates_tpl #posts-filter {
+    padding: 20px;
+    background: #fff;
+    border-radius: var( --rptemplates-radius );
+    box-shadow: 0 1px 2px rgba( 16, 24, 40, .1 );
+}
+
+.post-type-rptemplates_tpl #posts-filter .wp-list-table {
+    border-color: #eaecf0;
+    box-shadow: none;
+}
+
+.post-type-rptemplates_tpl #posts-filter .wp-list-table th,
+.post-type-rptemplates_tpl #posts-filter .wp-list-table td {
+    border-color: #eaecf0;
+}
+
+.post-type-rptemplates_tpl #posts-filter .wp-list-table .column-date {
+    width: 190px;
+}
+
+/* Bulk actions, filters and per page */
+
+.post-type-rptemplates_tpl .tablenav .actions {
+    padding: 0 8px 9px 0;
+}
+
+.post-type-rptemplates_tpl .tablenav .actions select {
+    height: 36px;
+    min-height: 36px;
+    padding: 8px 30px 8px 10px;
+    font-size: 13px;
+    line-height: 1.4;
+    border: 1px solid #d0d5dd;
+    border-radius: 6px;
+    background-color: #fff;
+    background-image: url( "data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%231e1e1e%22%2F%3E%3C%2Fsvg%3E" );
+    background-repeat: no-repeat;
+    background-position: right 8px top 55%;
+    background-size: 16px 16px;
+    -webkit-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.post-type-rptemplates_tpl .tablenav .actions .button {
+    height: 36px !important;
+    min-height: 36px !important;
+    box-sizing: border-box;
+    border-radius: 6px !important;
+}
+
+/* Pagination */
+
+.post-type-rptemplates_tpl .tablenav-pages .displaying-num {
+    margin-right: 10px;
+}
+
+.post-type-rptemplates_tpl .tablenav-pages .pagination-links,
+.post-type-rptemplates_tpl .tablenav-pages .paging-input {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.post-type-rptemplates_tpl .tablenav-pages .button,
+.post-type-rptemplates_tpl .tablenav-pages .tablenav-pages-navspan {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    min-height: 36px;
+    margin: 0;
+    padding: 0 8px;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+.post-type-rptemplates_tpl .tablenav-pages .current-page {
+    height: 36px;
+    min-height: 36px;
+    margin: 0;
+    padding: 0 8px;
+    font-size: 13px;
+    line-height: 1.4;
+    border: 1px solid #d0d5dd;
+    border-radius: 6px;
+    background: #fff;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Status pills inside the container */
+
+.post-type-rptemplates_tpl .subsubsub {
+    margin: 0;
+    padding: 20px 20px 0;
+    background: #fff;
+    border-radius: var( --rptemplates-radius ) var( --rptemplates-radius ) 0 0;
+    box-shadow: 0 -1px 2px rgba( 16, 24, 40, .1 );
+}
+
+.post-type-rptemplates_tpl #posts-filter {
+    padding-top: 16px;
+    border-radius: 0 0 var( --rptemplates-radius ) var( --rptemplates-radius );
+}
+
+/* Status links styled like Admin Help Docs */
+
+.post-type-rptemplates_tpl .subsubsub {
+    gap: 0;
+}
+
+.post-type-rptemplates_tpl .subsubsub li {
+    margin: 0 8px 0 0;
+    color: transparent;
+}
+
+.post-type-rptemplates_tpl .subsubsub a,
+.post-type-rptemplates_tpl .subsubsub a:hover,
+.post-type-rptemplates_tpl .subsubsub a:focus,
+.post-type-rptemplates_tpl .subsubsub a.current,
+.post-type-rptemplates_tpl .subsubsub a.current:hover {
+    padding: 5px 10px;
+    border-radius: 4px;
+    background: rgba( 0, 0, 0, .10 );
+    font-size: .9rem;
+    font-weight: 400;
+}
+
+.post-type-rptemplates_tpl .subsubsub a {
+    color: #2271b1;
+}
+
+.post-type-rptemplates_tpl .subsubsub a.current {
+    color: #000;
+}
+
+/* No color change on hover */
+
+.post-type-rptemplates_tpl .subsubsub a:hover,
+.post-type-rptemplates_tpl .subsubsub a:focus {
+    color: #2271b1;
+}
+
+.post-type-rptemplates_tpl .subsubsub a.current:hover,
+.post-type-rptemplates_tpl .subsubsub a.current:focus {
+    color: #000;
+}
+
+/* Active status link in bold */
+
+.post-type-rptemplates_tpl .subsubsub a.current,
+.post-type-rptemplates_tpl .subsubsub a.current:hover,
+.post-type-rptemplates_tpl .subsubsub a.current:focus {
+    font-weight: 600;
+}
+
+/* Notices moved into the wrap by WordPress sit the same distance from the subheader */
+
+.post-type-rptemplates_tpl .wrap > .notice {
+    margin: -30px 0 20px;
+}
